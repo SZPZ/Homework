@@ -74,10 +74,10 @@ public class five
         String myText;
         while((myText = br.readLine()) != null) {
 
-            if(myText.equals(keyword)){                                   // if the line we're currently on in our text file equals the term
+            if(myText.equals(keyword)){                                   
 
-                System.out.println("Found Keyword: "+ keyword);              // print out the term the user wanted to search for
-                System.out.println("Description: " + br.readLine());   // and then print out the next line of the file (our description)
+                System.out.println("Found Keyword: "+ keyword);              
+                System.out.println("Description: " + br.readLine());  
                 break;
             } else{
                 System.out.println("Keyword not found");
