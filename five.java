@@ -20,15 +20,15 @@ public class five
             switch (choiceentry)
             {
                 case 1:
-                System.out.println("You have selected to search for a term");// do something
+                System.out.println("You have selected to search for a term");
                 SearchByTerm();
                 break;
                 case 2: 
-                System.out.println("You have selected to search for a keyword");// ..something else
+                System.out.println("You have selected to search for a keyword");
                 SearchByKeyword();
                 break;
                 case 3: 
-                System.out.println("You have selected to exit");// .. exit program
+                System.out.println("You have selected to exit");
                 break;
                 default:
                 System.out.println("Choice must be a value between 1 and 3.");
@@ -48,10 +48,10 @@ public class five
         String myText;
         while((myText = br.readLine()) != null) {
 
-            if(myText.equals(term)){                                   // if the line we're currently on in our text file equals the term
+            if(myText.equals(term)){                                   
 
-                System.out.println("Found term: "+ term);              // print out the term the user wanted to search for
-                System.out.println("Description: " + br.readLine());   // and then print out the next line of the file (our description)
+                System.out.println("Found term: "+ term);              
+                System.out.println("Description: " + br.readLine());   
                 break;
             } else{
                 System.out.println("Term not found");
