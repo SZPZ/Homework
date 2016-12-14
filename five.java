@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class five
 {
@@ -65,26 +66,27 @@ public class five
     public static void SearchByKeyword() throws IOException
     {
         Scanner input = new Scanner(System.in);
-        FileReader fr = new FileReader("C:\\Users\\Joe\\Desktop\\college\\Computing\\Programming\\Bluej\\file.txt");
+        FileReader fr = new FileReader("U:\\bluej\\file.txt");
         BufferedReader br = new BufferedReader(fr);
 
         System.out.println("Enter a keyword to search for: ");
         String keyword = input.nextLine();
 
         String myText;
-        while((myText = br.readLine()) != null) {
-
-            if(myText.equals(keyword)){                                   
-
-                System.out.println("Found Keyword: "+ keyword);              
-                System.out.println("Description: " + br.readLine());  
-                break;
-            } else{
-                System.out.println("Keyword not found");
-                break;
-
-            }
-
+        ArrayList<String> lines = new ArrayList<>();
+        String line;
+        while((line = br.readLine()) != null){
+            lines.add(line);
+        }
+        boolean found = false;
+        for(int i = 0; i < lines.size(); i++){
+            if(lines.get(i).indexOf(keyword) > -1){
+                System.out.println("Term: " + lines.get(i - 1));
+                found = true;
+            } 
+        } 
+        if (found == false) {
+            System.out.println("Keyword not found");
         }
         br.close();
     }
